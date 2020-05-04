@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @clase.nombre %>
+</p>
+
+<p>
+  <strong>Duracion:</strong>
+  <%= @clase.duracion %>
+</p>
+
+<p>
+  <strong>Profesor asignado:</strong>
+  <%= @clase.profesor_asignado %>
+</p>
+
+<p>
+  <strong>Cantidad alumnos:</strong>
+  <%= @clase.cantidad_alumnos %>
+</p>
+
+<p>
+  <strong>Contenido:</strong>
+  <%= @clase.contenido %>
+</p>
+
+<p>
+  <strong>Nivel experiencia:</strong>
+  <%= @clase.nivel_experiencia %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @clase.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_clase_path(@clase) %> |
+<%= link_to 'Back', clases_path %>

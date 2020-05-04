@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  duracion: 1
+  profesor_asignado: MyString
+  cantidad_alumnos: 1
+  contenido: MyText
+  nivel_experiencia: 1
+  descripcion: MyText
+
+two:
+  nombre: MyString
+  duracion: 1
+  profesor_asignado: MyString
+  cantidad_alumnos: 1
+  contenido: MyText
+  nivel_experiencia: 1
+  descripcion: MyText
