@@ -13,3 +13,27 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.row.content {
+    height: 500px;
+}
+
+p{
+    padding-top: 5px;
+}
+.sidenav {
+    padding-top: 20px;
+    background-color: #eeeeee;
+    height: 100%;
+}
+
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
