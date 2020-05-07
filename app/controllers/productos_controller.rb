@@ -25,6 +25,7 @@ class ProductosController < ApplicationController
   # POST /productos.json
   def create
     @producto = Producto.new(producto_params)
+    @producto.image.attach(producto_params[:image])
 
     respond_to do |format|
       if @producto.save
@@ -40,9 +41,11 @@ class ProductosController < ApplicationController
   # PATCH/PUT /productos/1
   # PATCH/PUT /productos/1.json
   def update
+    @producto.image.purge
+    @producto.image.attach(producto_params[:image])
     respond_to do |format|
       if @producto.update(producto_params)
-        format.html { redirect_to @producto, notice: 'Producto was successfully updated.' }
+        format.html { redirect_to @producto, notice: 'El producto fue actualizado con éxito.' }
         format.json { render :show, status: :ok, location: @producto }
       else
         format.html { render :edit }
@@ -69,6 +72,6 @@ class ProductosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producto_params
-      params.require(:producto).permit(:title, :body)
+      params.require(:producto).permit(:title, :body, :image)
     end
 end

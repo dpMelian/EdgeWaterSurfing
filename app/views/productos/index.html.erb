@@ -16,9 +16,10 @@
       <tr>
         <td><%= producto.title %></td>
         <td><%= producto.body %></td>
-        <td><%= link_to 'Show', producto %></td>
-        <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
-        <td><%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag(producto.image) if producto.image.attached? %></td>
+        <td><%= link_to 'Ver', producto %></td>
+        <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
+        <td><%= link_to 'Eliminar', producto, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,5 @@
 
 <br>
 
-<%= link_to 'New Producto', new_producto_path %>
+<a class="btn btn-primary" href="/productos/new" role="button">Nuevo usuario</a>
+<a class="btn btn-success" href="/productos" role="button">Productos</a>
