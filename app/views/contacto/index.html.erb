@@ -1,0 +1,32 @@
+<h1>Contacta con nosotros!!!!</h1><br>
+<p>Si tiene alguna duda o quiere solicitar información sobre algún producto o las actividades que ofertamos rellene este formulario para ponerse en contacto con nosotros</p><br>
+<%= form_for :post do |f| %>
+    <p>
+      <%= f.label :Nombre %>
+      <%= f.text_field :Nombre%><br>
+    </p>
+  
+    <p>
+      <%= f.label :Apellidos %>
+      <%= f.text_field  :Apellidos%><br>
+    </p>
+  
+    <p>
+      <%= f.label :Telefono %>
+      <%= f.text_field  :Telefono%><br>
+    </p>
+    <p>
+      <%= f.label :Direccion %>
+      <%= f.text_field  :Direccion%><br>
+    </p>
+    <p>
+      <%= f.label :Motivo  %><br>
+      <%= f.text_area  :Motivo%><br><br>
+    </p>
+    
+    
+            
+            <li><a href="/">Volver Atras</a></li><br>
+            <li><a href="/">Enviar</a></li>
+  <% end %>
+
