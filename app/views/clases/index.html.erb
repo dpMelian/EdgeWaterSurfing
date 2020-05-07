@@ -24,9 +24,9 @@
           <td><%= clase.duracion %></td>
           <td><%= clase.profesor_asignado %></td>
           <td><%= clase.cantidad_alumnos %></td>
-          <td><%= clase.contenido %></td>
+          <td><%= clase.contenido.truncate(50) %></td>
           <td><%= clase.nivel_experiencia %></td>
-          <td><%= clase.descripcion %></td>
+          <td><%= clase.descripcion.truncate(50) %></td>
           <td><%= link_to 'Ver', clase %></td>
           <td><%= link_to 'Editar', edit_clase_path(clase) %></td>
           <td><%= link_to 'Eliminar', clase, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
