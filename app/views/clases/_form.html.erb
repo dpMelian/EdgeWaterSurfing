@@ -11,24 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :nombre %>
+      <%= form.text_field :nombre %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :duracion %>
-    <%= form.number_field :duracion %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label "Duración" %>
+      <%= form.number_field :duracion %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :profesor_asignado %>
-    <%= form.text_field :profesor_asignado %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :profesor_asignado %>
+      <%= form.text_field :profesor_asignado %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :cantidad_alumnos %>
-    <%= form.number_field :cantidad_alumnos %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :cantidad_alumnos %>
+      <%= form.number_field :cantidad_alumnos %>
+    </div>
   </div>
 
   <div class="field">
@@ -42,7 +50,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :descripcion %>
+    <%= form.label "Descripción" %>
     <%= form.text_area :descripcion %>
   </div>
 
