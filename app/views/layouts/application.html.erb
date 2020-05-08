@@ -10,21 +10,42 @@
   </head>
 
   <body>
-  
+  <%
+    @currentUrl = request.path
+    @inicio = "noactive"
+    @tienda = "noactive"
+    @contacto = "noactive"
+    @usuarios = "noactive"
+    @clases = "noactive"
+    @productos = "noactive"
+    if @currentUrl == "/"
+      @inicio = "active"
+    elsif @currentUrl == "/contacto"
+      @contacto = "active"
+    elsif @currentUrl == "/usuarios"
+      @usuarios = "active"
+    elsif @currentUrl == "/tienda"
+      @tienda = "active"
+    elsif @currentUrl == "/clases"
+      @clases = "active"
+    elsif @currentUrl == "/productos"
+      @productos = "active"
+    end
+  %>
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">EdgeWaterSurfing</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/">Inicio</a></li>
-          <li><a href="/">Tienda</a></li>
-          <li><a href="/contacto">Contacto</a></li>
+          <li class=<%= @inicio%>><a href="/">Inicio</a></li>
+          <li class=<%= @tienda%>><a href="/">Tienda</a></li>
+          <li class=<%= @contacto%>><a href="/contacto">Contacto</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/usuarios">Gestionar usuarios</a></li>
-          <li><a href="/clases">Gestionar clases</a></li>
-          <li><a href="/productos">Gestionar productos</a></li>
+          <li class=<%= @usuarios%>><a href="/usuarios">Gestionar usuarios</a></li>
+          <li class=<%= @clases%>><a href="/clases">Gestionar clases</a></li>
+          <li class=<%= @productos%>><a href="/productos">Gestionar productos</a></li>
         </ul>
       </div>
     </nav>
