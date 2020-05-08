@@ -18,6 +18,7 @@
     @usuarios = "noactive"
     @clases = "noactive"
     @productos = "noactive"
+    @tutorial = "noactive"
     if @currentUrl == "/"
       @inicio = "active"
     elsif @currentUrl == "/contacto"
@@ -30,6 +31,8 @@
       @clases = "active"
     elsif @currentUrl == "/productos"
       @productos = "active"
+    elsif @currentUrl == "/tutorial"
+      @tutorial = "active"
     end
   %>
     <nav class="navbar navbar-inverse">
@@ -40,6 +43,7 @@
         <ul class="nav navbar-nav">
           <li class=<%= @inicio%>><a href="/">Inicio</a></li>
           <li class=<%= @tienda%>><a href="/">Tienda</a></li>
+          <li class=<%= @tutorial%>><a href="/">Tutoriales</a></li>
           <li class=<%= @contacto%>><a href="/contacto">Contacto</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
