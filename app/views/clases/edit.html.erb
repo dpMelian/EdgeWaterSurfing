@@ -3,6 +3,7 @@
 
     <%= render 'form', clase: @clase %>
 
-    <a class="btn btn-primary" href="<%= @clase %>" role="button">Ver</a>
+    <a class="btn btn-primary" href="<%= clase_path(@clase) %>" role="button">Ver</a>
     <a class="btn btn-success" href="<%= clases_path %>" role="button">Atrás</a>
+    <%= link_to 'Show', @clase %>
 </div>
