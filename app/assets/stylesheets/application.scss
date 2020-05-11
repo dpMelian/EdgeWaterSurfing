@@ -15,20 +15,49 @@
 @import "bootstrap";
 
 .navbar {
+    border-color: rgb(28, 112, 207);
     margin-bottom: 0;
     border-radius: 0;
+    background: rgb(0, 77, 199);
+    background: linear-gradient(90deg, rgba(0,77,190,1) 0%, rgba(119,181,255,1) 100%);
 }
+
+.nav.navbar-nav li.active > a{
+    background-color: rgba(119,181,255,1);
+    color:white;
+}
+
+.nav.navbar-nav li.active > a:hover{
+    background-color: rgb(48, 142, 248);
+    color:white;
+}
+
+.nav.navbar-nav li.noactive > a:hover{
+    background-color: rgb(48, 142, 248);
+    color:white;
+}
+
 
 .row.content {
     height: 500px;
 }
 
-p{
+p a{
     padding-top: 5px;
+    font-size: medium;
+    color: rgb(28, 112, 207);
+    text-decoration: none;
+}
+
+p a:hover{
+    text-decoration: none;
 }
 .sidenav {
     padding-top: 20px;
-    background-color: #eeeeee;
+    background: rgb(238, 238, 238);
+    background: linear-gradient(180deg,rgba(238,238,238,1) 40%, rgba(169,237,243,1) 53%, rgba(0,236,255,1) 66%,
+     rgba(0,236,255,0) 100%);
+    //background-color: #eeeeee;
     height: 100%;
 }
 
