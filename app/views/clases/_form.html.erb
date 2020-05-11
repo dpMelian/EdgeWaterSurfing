@@ -21,7 +21,7 @@
   <div class="form-group">
     <div class="field">
       <%= form.label "Duración" %>
-      <%= form.number_field :duracion %>
+      <%= form.number_field :duracion, min: 1 %>
     </div>
     <small id="ayudaDuracion" class="form-text text-muted">Duración estimada de la clase en minutos</small>
   </div>
@@ -57,7 +57,7 @@
     <%= form.text_area :descripcion, class: 'form-control', value: clase.descripcion, rows: "3"%>
   </div>
 
-  <div class="btn actions">
-    <%= form.submit %>
+  <div class="actions">
+    <%= form.submit class: 'btn btn-success' %>
   </div>
 <% end %>

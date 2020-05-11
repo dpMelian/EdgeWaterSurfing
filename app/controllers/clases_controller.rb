@@ -28,7 +28,7 @@ class ClasesController < ApplicationController
 
     respond_to do |format|
       if @clase.save
-        format.html { redirect_to @clase, notice: 'Clase was successfully created.' }
+        format.html { redirect_to @clase, notice: 'Clase creada satisfactoriamente.' }
         format.json { render :show, status: :created, location: @clase }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ClasesController < ApplicationController
   def update
     respond_to do |format|
       if @clase.update(clase_params)
-        format.html { redirect_to @clase, notice: 'Clase was successfully updated.' }
+        format.html { redirect_to @clase, notice: 'Clase actualizada satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @clase }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ClasesController < ApplicationController
   def destroy
     @clase.destroy
     respond_to do |format|
-      format.html { redirect_to clases_url, notice: 'Clase was successfully destroyed.' }
+      format.html { redirect_to clases_url, notice: 'Clase eliminada satisfactoriamente.' }
       format.json { head :no_content }
     end
   end
