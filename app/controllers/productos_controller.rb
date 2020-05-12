@@ -27,7 +27,15 @@ class ProductosController < ApplicationController
     @producto = Producto.new(producto_params)
     @producto.image.attach(producto_params[:image])
 
-    respond_to do |format|
+    if @producto.save
+      flash[:success] = "Producto creado correctamente."
+      redirect_to @producto
+    else
+      render 'new'
+    end
+
+
+=begin     respond_to do |format|
       if @producto.save
         format.html { redirect_to @producto, notice: 'Producto was successfully created.' }
         format.json { render :show, status: :created, location: @producto }
@@ -36,6 +44,7 @@ class ProductosController < ApplicationController
         format.json { render json: @producto.errors, status: :unprocessable_entity }
       end
     end
+=end
   end
 
   # PATCH/PUT /productos/1
@@ -43,6 +52,15 @@ class ProductosController < ApplicationController
   def update
     @producto.image.purge
     @producto.image.attach(producto_params[:image])
+
+    if @producto.update(producto_params)
+      flash[:success] = "El producto fue actualizado con éxito."
+      redirect_to @producto
+    else
+      render 'edit'
+    end
+
+=begin
     respond_to do |format|
       if @producto.update(producto_params)
         format.html { redirect_to @producto, notice: 'El producto fue actualizado con éxito.' }
@@ -52,16 +70,23 @@ class ProductosController < ApplicationController
         format.json { render json: @producto.errors, status: :unprocessable_entity }
       end
     end
+=end
   end
 
   # DELETE /productos/1
   # DELETE /productos/1.json
   def destroy
     @producto.destroy
-    respond_to do |format|
+
+    flash[:success] = "El producto fue eliminado correctamente."
+    redirect_to productos_url
+
+=begin
+      respond_to do |format|
       format.html { redirect_to productos_url, notice: 'Producto was successfully destroyed.' }
       format.json { head :no_content }
     end
+=end
   end
 
   private

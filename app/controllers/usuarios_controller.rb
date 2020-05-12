@@ -27,6 +27,14 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.new(usuario_params)
     @usuario.image.attach(usuario_params[:image])
 
+    if @usuario.save
+      flash[:success] = "El usuario fue agregado correctamente."
+      redirect_to @usuario
+    else
+      render 'new'
+    end
+
+=begin
     respond_to do |format|
       if @usuario.save
         format.html { redirect_to @usuario, notice: 'El usuario fue agregado correctamente.' }
@@ -36,6 +44,7 @@ class UsuariosController < ApplicationController
         format.json { render json: @usuario.errors, status: :unprocessable_entity }
       end
     end
+=end
   end
 
   # PATCH/PUT /usuarios/1
@@ -43,6 +52,15 @@ class UsuariosController < ApplicationController
   def update
     @usuario.image.purge
     @usuario.image.attach(usuario_params[:image])
+
+    if @usuario.update(usuario_params)
+      flash[:success] = "El usuario fue actualizado correctamente."
+      redirect_to @usuario
+    else
+      render 'edit'
+    end
+
+=begin
     respond_to do |format|
       if @usuario.update(usuario_params)
         format.html { redirect_to @usuario, notice: 'El usuario fue actualizado correctamente.' }
@@ -52,16 +70,22 @@ class UsuariosController < ApplicationController
         format.json { render json: @usuario.errors, status: :unprocessable_entity }
       end
     end
+=end
   end
 
   # DELETE /usuarios/1
   # DELETE /usuarios/1.json
   def destroy
     @usuario.destroy
+    flash[:success] = "El usuario fue eliminado correctamente."
+    redirect_to usuarios_url
+
+=begin
     respond_to do |format|
-      format.html { redirect_to usuarios_url, notice: 'El usuario fue destruido correctamente.' }
+      format.html { redirect_to usuarios_url, notice: 'El usuario fue eliminado correctamente.' }
       format.json { head :no_content }
     end
+=end
   end
 
   private

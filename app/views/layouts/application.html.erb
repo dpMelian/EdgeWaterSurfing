@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    
   <%
     @currentUrl = request.path
     @inicio = "noactive"
@@ -54,6 +55,11 @@
       </div>
     </nav>
     
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
 
     <%= yield %>
   </body>
