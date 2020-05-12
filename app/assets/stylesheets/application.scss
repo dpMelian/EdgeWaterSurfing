@@ -21,7 +21,10 @@
     background: rgb(0, 77, 199);
     background: linear-gradient(90deg, rgba(0,77,190,1) 0%, rgba(119,181,255,1) 100%);
 }
-
+nav{
+    position: -webkit-sticky;
+    position: sticky;
+}
 .nav.navbar-nav li.active > a{
     background-color: rgba(119,181,255,1);
     color:white;
