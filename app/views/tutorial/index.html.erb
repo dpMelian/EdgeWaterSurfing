@@ -1,3 +1,30 @@
-<h1> TUTORIALES </h1><br>
-<p> tutorial 1</p>><br>
-<p> tutorial 2</p>
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Tutoriales</h1>
+  <p> En ésta sección puede consultar los distintos tutoriales disponibles. </h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> </th>
+        <th> </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+  <tbody>
+      <tr>
+        <td> 
+        <%= link_to image_tag("tutorial1.jpg", height: "150", width: "300"), "https://www.youtube.com/watch?v=mNoOoYheHi4" %>
+        <td>En este tutorial vas a aprender a ponerte de pie en la tabla.</td>
+      </tr>
+
+      <tr>   
+      <td> 
+        <%= link_to image_tag("tutorial2.jpg", height: "150", width: "300"), "https://www.youtube.com/watch?v=RywrlQVu2gc" %>
+        </td>
+        <td>En este tutorial enseñamos cómo moverte por el mar para conseguir montar más olas.</td>
+      </tr>
+
+  </tbody>
+</table>
