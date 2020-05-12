@@ -54,7 +54,7 @@ class UsuariosController < ApplicationController
     @usuario.image.attach(usuario_params[:image])
 
     if @usuario.update(usuario_params)
-      flash[:success] = "El usuario fue actualizado correctamente."
+      flash[:info] = "El usuario fue actualizado correctamente."
       redirect_to @usuario
     else
       render 'edit'

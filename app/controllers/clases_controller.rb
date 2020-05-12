@@ -47,7 +47,7 @@ class ClasesController < ApplicationController
   # PATCH/PUT /clases/1.json
   def update
     if @clase.update(clase_params)
-      flash[:success] = "Clase actualizada correctamente."
+      flash[:info] = "Clase actualizada correctamente."
       redirect_to @clase
     else
       render 'edit'

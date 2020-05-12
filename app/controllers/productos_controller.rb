@@ -54,7 +54,7 @@ class ProductosController < ApplicationController
     @producto.image.attach(producto_params[:image])
 
     if @producto.update(producto_params)
-      flash[:success] = "El producto fue actualizado con éxito."
+      flash[:info] = "El producto fue actualizado con éxito."
       redirect_to @producto
     else
       render 'edit'
