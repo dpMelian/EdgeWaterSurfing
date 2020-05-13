@@ -35,7 +35,8 @@ class ProductosController < ApplicationController
     end
 
 
-=begin     respond_to do |format|
+=begin
+    respond_to do |format|
       if @producto.save
         format.html { redirect_to @producto, notice: 'Producto was successfully created.' }
         format.json { render :show, status: :created, location: @producto }
