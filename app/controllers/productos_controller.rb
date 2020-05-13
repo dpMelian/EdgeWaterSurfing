@@ -25,17 +25,8 @@ class ProductosController < ApplicationController
   # POST /productos.json
   def create
     @producto = Producto.new(producto_params)
-    @producto.image.attach(producto_params[:image])
 
-    if @producto.save
-      flash[:success] = "Producto creado correctamente."
-      redirect_to @producto
-    else
-      render 'new'
-    end
-
-
-=begin     respond_to do |format|
+    respond_to do |format|
       if @producto.save
         format.html { redirect_to @producto, notice: 'Producto was successfully created.' }
         format.json { render :show, status: :created, location: @producto }
@@ -44,49 +35,30 @@ class ProductosController < ApplicationController
         format.json { render json: @producto.errors, status: :unprocessable_entity }
       end
     end
-=end
   end
 
   # PATCH/PUT /productos/1
   # PATCH/PUT /productos/1.json
   def update
-    @producto.image.purge
-    @producto.image.attach(producto_params[:image])
-
-    if @producto.update(producto_params)
-      flash[:info] = "El producto fue actualizado con éxito."
-      redirect_to @producto
-    else
-      render 'edit'
-    end
-
-=begin
     respond_to do |format|
       if @producto.update(producto_params)
-        format.html { redirect_to @producto, notice: 'El producto fue actualizado con éxito.' }
+        format.html { redirect_to @producto, notice: 'Producto was successfully updated.' }
         format.json { render :show, status: :ok, location: @producto }
       else
         format.html { render :edit }
         format.json { render json: @producto.errors, status: :unprocessable_entity }
       end
     end
-=end
   end
 
   # DELETE /productos/1
   # DELETE /productos/1.json
   def destroy
     @producto.destroy
-
-    flash[:success] = "El producto fue eliminado correctamente."
-    redirect_to productos_url
-
-=begin
-      respond_to do |format|
+    respond_to do |format|
       format.html { redirect_to productos_url, notice: 'Producto was successfully destroyed.' }
       format.json { head :no_content }
     end
-=end
   end
 
   private
@@ -97,6 +69,6 @@ class ProductosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producto_params
-      params.require(:producto).permit(:title, :body, :image)
+      params.require(:producto).permit(:title, :body, :price, :category)
     end
 end

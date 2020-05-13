@@ -11,13 +11,13 @@
 </p>
 
 <p>
-<% if @producto.image.attached? %>
-<p>
-<strong>Image:</strong>
-<br>
-<%= image_tag @producto.image %>
+  <strong>Price:</strong>
+  <%= @producto.price %>
 </p>
-<% end %>
+
+<p>
+  <strong>Category:</strong>
+  <%= @producto.category %>
 </p>
 
 <%= link_to 'Edit', edit_producto_path(@producto) %> |

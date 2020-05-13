@@ -15,6 +15,8 @@ class ProductosTest < ApplicationSystemTestCase
     click_on "New Producto"
 
     fill_in "Body", with: @producto.body
+    fill_in "Category", with: @producto.category
+    fill_in "Price", with: @producto.price
     fill_in "Title", with: @producto.title
     click_on "Create Producto"
 
@@ -27,6 +29,8 @@ class ProductosTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Body", with: @producto.body
+    fill_in "Category", with: @producto.category
+    fill_in "Price", with: @producto.price
     fill_in "Title", with: @producto.title
     click_on "Update Producto"
 
