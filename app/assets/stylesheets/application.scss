@@ -14,29 +14,47 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+.navbar.navbar-inverse {
+    top: 0;
+    z-index: 1;
+    position: sticky;
+}
 .navbar {
     border-color: rgb(28, 112, 207);
     margin-bottom: 0;
     border-radius: 0;
-    background: rgb(0, 77, 199);
-    background: linear-gradient(90deg, rgba(0,77,190,1) 0%, rgba(119,181,255,1) 100%);
+    background: rgb(0,77,190);
+    background: linear-gradient(90deg, rgba(0,77,190,1) 0%, rgba(119,181,255,1) 52%, rgb(245, 177, 61) 71%);
 }
-nav{
-    position: -webkit-sticky;
-    position: sticky;
-}
+
 .nav.navbar-nav li.active > a{
     background-color: rgba(119,181,255,1);
     color:white;
 }
 
 .nav.navbar-nav li.active > a:hover{
-    background-color: rgb(48, 142, 248);
+    background-color: rgb(119, 181, 255);
     color:white;
 }
 
 .nav.navbar-nav li.noactive > a:hover{
     background-color: rgb(48, 142, 248);
+    color:white;
+}
+
+.nav.navbar-nav.navbar-right li.active > a{
+    background-color: rgb(255, 185, 55);
+    color:white;
+}
+/*
+.nav.navbar-nav.navbar-right li.active > a:hover{
+    background-color: rgb(255, 207, 119);
+    color:white;
+}
+*/
+.nav.navbar-nav.navbar-right li.noactive > a:hover{
+    background-color: rgb(255, 184, 53);
     color:white;
 }
 
@@ -64,8 +82,12 @@ p a:hover{
     height: 100%;
 }
 
+hr {
+    width: 50%;
+}
+
 footer {
-    background-color: #555;
+    background-color: rgb(255, 255, 255);
     color: white;
     padding: 15px;
 }
