@@ -26,6 +26,18 @@ class ProductosController < ApplicationController
   def create
     @producto = Producto.new(producto_params)
 
+<<<<<<< HEAD
+=======
+    if @producto.save
+      flash[:success] = "Producto creado correctamente."
+      redirect_to @producto
+    else
+      render 'new'
+    end
+
+
+=begin
+>>>>>>> 8d8a80bd8cf430ace1caae7aa6c98d7d97a6db41
     respond_to do |format|
       if @producto.save
         format.html { redirect_to @producto, notice: 'Producto was successfully created.' }
@@ -35,7 +47,7 @@ class ProductosController < ApplicationController
         format.json { render json: @producto.errors, status: :unprocessable_entity }
       end
     end
-  end
+=end
 
   # PATCH/PUT /productos/1
   # PATCH/PUT /productos/1.json

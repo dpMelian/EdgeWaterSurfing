@@ -1,3 +1,5 @@
+<% array_profes = Usuario.where(rol: 'Profesor').to_a %>
+
 <%= form_with(model: clase, local: true) do |form| %>
   <% if clase.errors.any? %>
     <div id="error_explanation">
@@ -14,14 +16,14 @@
   <div class="form-group">
     <div class="field">
       <%= form.label :nombre %>
-      <%= form.text_field :nombre %>
+      <%= form.text_field :nombre, required: true %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="field">
       <%= form.label "Duración" %>
-      <%= form.number_field :duracion, min: 1 %>
+      <%= form.number_field :duracion, min: 1, required: true %>
     </div>
     <small id="ayudaDuracion" class="form-text text-muted">Duración estimada de la clase en minutos</small>
   </div>
@@ -29,26 +31,38 @@
   <div class="form-group">
     <div class="field">
       <%= form.label :profesor_asignado %>
-      <%= form.text_field :profesor_asignado %>
+
+      <!-- <%= form.text_field :profesor_asignado, required: true %> -->
+
+    <% profes = [] %>
+
+    <% array_profes.each do |profe| %>
+      <% profes.append(profe.nombre) %>
+    <% end %>
+
+    <%= select_tag(:profesor_asignado, options_for_select(profes)) %>
+
     </div>
   </div>
+
+  
 
   <div class="form-group">
     <div class="field">
       <%= form.label :cantidad_alumnos %>
-      <%= form.number_field :cantidad_alumnos, min: 1, max: 30 %>
+      <%= form.number_field :cantidad_alumnos, min: 1, max: 30, required: true %>
     </div>
     <small id="ayudaCantidadAlumnos" class="form-text text-muted">Cantidad máxima de alumnos por clase (máximo 30)</small>
   </div>
 
   <div class="form-group">
     <%= form.label :contenido %>
-    <%= form.text_area :contenido, class: 'form-control', value: clase.contenido, rows: "6" %>
+    <%= form.text_area :contenido, class: 'form-control', value: clase.contenido, rows: "6", required: true %>
   </div>
 
   <div class="field">
     <%= form.label :nivel_experiencia %>
-    <%= form.number_field :nivel_experiencia, class: 'form-group', value: clase.nivel_experiencia, min: 1, max: 5 %>
+    <%= form.number_field :nivel_experiencia, class: 'form-group', value: clase.nivel_experiencia, min: 1, max: 5, required: true %>
     <small id="ayudaNivelExperiencia" class="form-text text-muted">Nivel de experiencia necesario (mínimo 1, máximo 5)</small>
   </div>
 
