@@ -23,7 +23,7 @@
   <div class="form-group">
     <div class="field">
       <%= form.label "Duración" %>
-      <%= form.number_field :duracion, min: 1, required: true %>
+      <%= form.number_field :duracion, min: 0, required: true, step: 5, value: clase.duracion %>
     </div>
     <small id="ayudaDuracion" class="form-text text-muted">Duración estimada de la clase en minutos</small>
   </div>
@@ -32,15 +32,13 @@
     <div class="field">
       <%= form.label :profesor_asignado %>
 
-      <!-- <%= form.text_field :profesor_asignado, required: true %> -->
-
     <% profes = [] %>
 
     <% array_profes.each do |profe| %>
-      <% profes.append(profe.nombre) %>
+      <% profes.append(profe.nombre + ' - ' + profe.categoria) %>
     <% end %>
 
-    <%= select_tag(:profesor_asignado, options_for_select(profes)) %>
+    <%= form.select(:profesor_asignado, options_for_select(profes)) %>
 
     </div>
   </div>
