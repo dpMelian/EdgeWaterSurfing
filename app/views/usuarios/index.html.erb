@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
   <h1>Usuarios</h1>
+  <%= form_tag(search_page_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Nombre del usuario", class: "form-control" %>  
+    <div class="input-group-btn">  
+      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    </div>  
+  </div>  
+<% end %>
 
   <table class="table">
     <thead>
@@ -36,3 +45,4 @@
   <a class="btn btn-primary" href="/usuarios/new" role="button">Nuevo usuario</a>
   <a class="btn btn-success" href="/" role="button">Página principal</a>
 </div>
+

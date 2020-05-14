@@ -48,15 +48,6 @@
           <li class=<%= @contacto%>><a href="/contacto" style="color:white">Contacto</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-        <%= form_tag(search_page_path, :method => "get",   
-    class: 'navbar-form navbar-left') do %>  
-  <div class="input-group">  
-    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
-    <div class="input-group-btn">  
-      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
-    </div>  
-  </div>  
-<% end %>
           <li class=<%= @usuarios%>><a href="/usuarios" style="color:white">Gestionar usuarios</a></li>
           <li class=<%= @clases%>><a href="/clases" style="color:white">Gestionar clases</a></li>
           <li class=<%= @productos%>><a href="/productos" style="color:white">Gestionar productos</a></li>
@@ -83,3 +74,4 @@
     </footer>
   </body>
 </html>
+
