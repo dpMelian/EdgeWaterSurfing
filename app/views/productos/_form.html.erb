@@ -1,3 +1,5 @@
+<% array_categories = Producto.where(category: 'categories').to_a %>
+
 <%= form_with(model: producto, local: true) do |form| %>
   <% if producto.errors.any? %>
     <div id="error_explanation">
@@ -28,7 +30,13 @@
 
   <div class="field">
     <%= form.label :category %>
-    <%= form.text_field :category %>
+
+    <% categories = ['souvenir','material'] %>
+
+    <% array_categories.each do |category| %>
+    <% end %>
+
+    <%= form.select(:category, options_for_select(categories)) %>
   </div>
 
   <div class="actions">
