@@ -1,19 +1,40 @@
+<%
+time = Time.now
+dia = time.strftime("%A")
+today = ""
+case dia
+when "Monday"
+    today = "Lunes"
+when "Tuesday"
+    today = "Martes"
+when "Wednesday"
+    today = "Miércoles"
+when "Thursday"
+    today = "Jueves"
+when "Friday"
+    today = "Viernes"
+when "Saturday"
+    today = "Sábado"
+when "Sunday"
+    today = "Domingo"
+end
+%>
+
 <div class="container-fluid text-center">
     <div class="row content">
         <div class="col-sm-2 sidenav">
             <img src="/images/logo.png" class="img-rounded img-responsive" alt="EdgeWaterSurfing logo">
-            <!--
-            <br>
-            <br>
-            <br>
-            <br>
-            <p><a href="/">Link ejemplo1</a></p>
-            <p><a href="/">Link ejemplo2</a></p>
-            <p><a href="/">Link ejemplo3</a></p>
-            -->
+            <p class="time">Hoy es <%=today%>, <%=time.strftime("%k:%M %p") %></p>
+            <p><a href="/">Sobre nosotros</a></p>
+            <p><a href="/">Términos</a></p>
         </div>
         <div class="col-sm-10 text-left">
-            <img src="/images/indice.jpeg" class="img-rounded img-responsive mx-auto d-block" alt="Indice oceano" style="padding-top: 3px;">
+            <div class="contenedor">
+                <img id="imagen1" src="/images/indice.jpeg" class="img-rounded img-responsive mx-auto d-block" alt="Indice oceano" style="padding-top: 3px;">
+                <div class="overlay">
+                    <div class="text">Playa de Maspalomas</div>
+                </div>
+            </div>
             <h1>Bienvenido/a a EdgeWaterSurfing</h1>
             <h2>¿Quieres surfear?</h2>
             <p>En EdgeWaterSurfing sabemos que aprender surf es una 
@@ -24,7 +45,12 @@
             una escuela de surf como la nuestra, ya que el contacto con monitores profesionales y con surfistas veteranos 
             es fundamental a la hora de comenzar con buen pie a aprender surf. Si quieres saber cómo hacer surf 
             ¡sigue con nosotros! Ve a las <a href="/tutorial">clases</a></p> 
-            <img src="/images/surf1.png" class="img-rounded img-responsive" alt="Surf 1" style="padding-top: 3px;">
+            <div class="contenedor">
+                <img id="imagen2" src="/images/surf1.png" class="img-rounded img-responsive" alt="Surf 1" style="padding-top: 3px;">
+                <div class="overlay">
+                    <div class="text">Biblioteca al aire libre</div>
+                </div>
+            </div>
             <h2>¿Necesitas equipo?</h2>
             <p>Queremos ser tu Surfshop Online de confianza, un lugar donde puedas encontrar el mejor material de Surf, 
             Boyboard, Stand-Up-Paddle y Skateboard al mejor precio, los mejores materiales para fabricar tus tablas de surf, 
@@ -32,7 +58,12 @@
             Hacemos lo máximo para facilitar tus compras con métodos de pagos fiables y cómodos, con la posibilidad de 
             fraccionar tu pago o de pagar después de haber recibido tu pedido: compras, recibes, y pagas, así de sencillo.
             Ve a la <a href="/tienda">tienda</a></p>
-            <img src="/images/olas.jpg" class="img-rounded img-responsive" alt="Surf 2" style="padding-top: 3px;">
+            <div class="contenedor">
+                <img id="imagen3" src="/images/olas.jpg" class="img-rounded img-responsive" alt="Surf 2" style="padding-top: 3px;">
+                <div class="overlay">
+                    <div class="text">Playa del inglés</div>
+                </div>
+            </div>
             <h2>¡Contacta con nosotros!</h2>
             <p>Contacta con nosotros si tienes alguna duda, sugerencia o queja.
             Ve a <a href="/contacto">contacto</a></p>
