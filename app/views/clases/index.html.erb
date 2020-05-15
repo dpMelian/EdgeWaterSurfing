@@ -2,7 +2,15 @@
 
 <div class="container">
   <h1>Clases</h1>
-  
+  <%= form_tag(buscarclase_page_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :buscarclase, params[:buscarclase], placeholder: "Nombre de la clase", class: "form-control" %>  
+    <div class="input-group-btn">  
+      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    </div>  
+  </div> 
+  <% end %>
   <table class="table">
     <thead>
       <tr>
@@ -29,7 +37,25 @@
           <td><%= clase.descripcion.truncate(50) %></td>
           <td><%= link_to 'Ver', clase %></td>
           <td><%= link_to 'Editar', edit_clase_path(clase) %></td>
-          <td><%= link_to 'Eliminar', clase, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+          <td><%= link_to 'Eliminar', "javascript:void(0)", 'data-target': "#" + clase.id.to_s, 'data-toggle': "modal" %></td>
+
+          <div class="modal fade" id="<%= clase.id.to_s %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Confirmación de borrado</h4>
+                  </div>
+                  <div class="modal-body">
+                    ¿Estás seguro?
+                    <br>
+                    <%= link_to 'Sí', clase, method: :delete, class: 'btn btn-danger' %>
+                    <%= link_to 'No', "javascript:void(0)",'data-dismiss': "modal", class: 'btn btn-info' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </tr>
       <% end %>
     </tbody>

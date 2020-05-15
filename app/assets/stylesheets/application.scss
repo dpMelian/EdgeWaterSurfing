@@ -14,6 +14,46 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.contenedor {
+    position: relative;
+    width: auto;
+}
+
+#imagen1, #imagen2, #imagen3 {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    background-color: #555;
+    background: rgba(0,0,0,0.5);
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+}
+
+.text {
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: right;
+}
+
+.contenedor:hover .overlay {
+    bottom: 0;
+    height: 10%;
+}
 
 .navbar.navbar-inverse {
     top: 0;
@@ -63,9 +103,13 @@
     height: 700px;
 }
 
+.col-sm-2.sidenav p.time {
+    color: rgb(28, 112, 207);
+}
+
 p a{
     padding-top: 5px;
-    font-size: medium;
+    font-size: 14px;
     color: rgb(28, 112, 207);
     text-decoration: none;
 }

@@ -4,8 +4,25 @@ class ProductosController < ApplicationController
 
   # GET /productos
   # GET /productos.json
+  #def index
+  #  @productos = Producto.all
+  #end
+
   def index
-    @productos = Producto.all
+    #if params[:title]
+      #@productos = Producto.all.where('lower(title) LIKE ?', "%#{params[:title]}%")
+      #@productos = Producto.all.where("lower(title) LIKE :title", title: @parameter)
+     # @productos = Producto.all.where("title LIKE :title", title: @parameter)
+      
+    #else
+    #  @productos = Producto.all
+    #end
+    if params[:title].blank?  
+      @productos = Producto.all  
+    else  
+      @parameter = params[:title].downcase  
+      @productos = Producto.all.where("lower(nombre) LIKE :title", title: "%#{@parameter}%")  
+    end  
   end
 
   # GET /productos/1
