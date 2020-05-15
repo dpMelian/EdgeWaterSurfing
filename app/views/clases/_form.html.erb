@@ -35,7 +35,7 @@
     <% profes = [] %>
 
     <% array_profes.each do |profe| %>
-      <% profes.append(profe.nombre + ' - ' + profe.categoria) %>
+      <% profes.append(profe.nombre) %>
     <% end %>
 
     <%= form.select(:profesor_asignado, options_for_select(profes)) %>
