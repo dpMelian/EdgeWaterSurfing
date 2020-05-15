@@ -1,17 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h1> Búsqueda de clases por nombre </h1>
+<table class="table">
 
-<div class="container">
-  <h1>Clases</h1>
-  <%= form_tag(buscarclase_page_path, :method => "get",   
-    class: 'navbar-form navbar-left') do %>  
-  <div class="input-group">  
-    <%= search_field_tag :buscarclase, params[:buscarclase], placeholder: "Nombre de la clase", class: "form-control" %>  
-    <div class="input-group-btn">  
-      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
-    </div>  
-  </div> 
-  <% end %>
-  <table class="table">
     <thead>
       <tr>
         <th>Nombre</th>
@@ -42,8 +31,3 @@
       <% end %>
     </tbody>
   </table>
-
-  <br>
-  <a class="btn btn-primary" href="/clases/new" role="button">Nueva clase</a>
-  <a class="btn btn-success" href="/" role="button">Página principal</a>
-</div>
