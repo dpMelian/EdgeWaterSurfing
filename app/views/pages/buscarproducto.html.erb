@@ -1,16 +1,4 @@
-<p id="notice"><%= notice %></p>
-<div class="container">
-  <h1>Productos</h1>
-  <%= form_tag(buscarproducto_page_path, :method => "get",   
-    class: 'navbar-form navbar-left') do %>  
-  <div class="input-group">  
-    <%= search_field_tag :buscarproducto, params[:buscarproducto], placeholder: "Nombre del producto", class: "form-control" %>  
-    <div class="input-group-btn">  
-      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
-    </div>  
-  </div>  
-<% end %>
-
+<h1>Búsqueda de productos por nombre</h1>  
 <table class="table">
   <thead>
     <tr>

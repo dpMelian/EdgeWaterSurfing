@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :tienda
   resources :contacto
   resources :tutorial
-  get '/search' => 'pages#search', :as => 'search_page'
+  get '/buscarusuario' => 'pages#buscarusuario', :as => 'buscarusuario_page'
+  get '/buscarproducto' => 'pages#buscarproducto', :as => 'buscarproducto_page'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
