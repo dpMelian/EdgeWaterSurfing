@@ -17,6 +17,10 @@ class TutorialesController < ApplicationController
     @tutoriale = Tutoriale.new
   end
 
+  # GET /tutoriales/1/edit
+  def edit
+  end
+
   # POST /tutoriales
   # POST /tutoriales.json
   def create
@@ -30,6 +34,30 @@ class TutorialesController < ApplicationController
         format.html { render :new }
         format.json { render json: @tutoriale.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  # PATCH/PUT /tutoriales/1
+  # PATCH/PUT /tutoriales/1.json
+  def update
+    respond_to do |format|
+      if @tutoriale.update(tutoriale_params)
+        format.html { redirect_to @tutoriale, notice: 'Tutoriale was successfully updated.' }
+        format.json { render :show, status: :ok, location: @tutoriale }
+      else
+        format.html { render :edit }
+        format.json { render json: @tutoriale.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /tutoriales/1
+  # DELETE /tutoriales/1.json
+  def destroy
+    @tutoriale.destroy
+    respond_to do |format|
+      format.html { redirect_to tutoriales_url, notice: 'Tutoriale was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

@@ -66,6 +66,15 @@ ActiveRecord::Schema.define(version: 2020_05_21_191035) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tutorials", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.string "level"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "usuarios", force: :cascade do |t|
     t.string "nombre"
     t.string "apellidos"

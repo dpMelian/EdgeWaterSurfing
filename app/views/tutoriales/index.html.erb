@@ -21,6 +21,8 @@
         <td><%= tutoriale.level %></td>
         <td><%= tutoriale.url %></td>
         <td><%= link_to 'Show', tutoriale %></td>
+        <td><%= link_to 'Edit', edit_tutoriale_path(tutoriale) %></td>
+        <td><%= link_to 'Destroy', tutoriale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
