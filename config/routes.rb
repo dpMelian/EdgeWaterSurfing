@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'terminos/index'
+  resources :terminos
   resources :productos
   resources :clases
   root :to => "home#index"

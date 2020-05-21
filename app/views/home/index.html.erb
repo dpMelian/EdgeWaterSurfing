@@ -20,15 +20,15 @@ when "Sunday"
 end
 %>
 
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" >
     <div class="row content">
         <div class="col-sm-2 sidenav">
             <img src="/images/logo.png" class="img-rounded img-responsive" alt="EdgeWaterSurfing logo">
             <p class="time">Hoy es <%=today%>, <%=time.strftime("%k:%M %p") %></p>
             <p><a href="/">Sobre nosotros</a></p>
-            <p><a href="/">Términos</a></p>
+            <p><a href="/terminos">Términos</a></p>
         </div>
-        <div class="col-sm-10 text-left">
+        <div class="col-sm-10 text-left" style="text-align: justify; text-justify: inter-word;">
             <div class="contenedor">
                 <img id="imagenIndex" src="/images/indice.jpeg" class="img-rounded img-responsive mx-auto d-block" alt="Indice oceano" style="padding-top: 3px;">
                 <div class="overlay">
