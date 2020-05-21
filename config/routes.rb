@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+=begin   get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
+=end
+
+  get 'signup', to: 'usuarios#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
   get 'terminos/index'
   resources :terminos
   resources :productos
@@ -9,6 +18,7 @@ Rails.application.routes.draw do
   resources :tienda
   resources :contacto
   resources :tutorial
+  resources :sessions, only: [:new, :create, :destroy]
   get '/buscarusuario' => 'pages#buscarusuario', :as => 'buscarusuario_page'
   get '/buscarproducto' => 'pages#buscarproducto', :as => 'buscarproducto_page'
   get '/buscarclase' => 'pages#buscarclase', :as => 'buscarclase_page'
