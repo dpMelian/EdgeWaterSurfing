@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tutoriales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Level</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tutoriales.each do |tutoriale| %>
+      <tr>
+        <td><%= tutoriale.title %></td>
+        <td><%= tutoriale.body %></td>
+        <td><%= tutoriale.level %></td>
+        <td><%= tutoriale.url %></td>
+        <td><%= link_to 'Show', tutoriale %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tutoriale', new_tutoriale_path %>

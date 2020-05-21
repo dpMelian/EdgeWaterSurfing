@@ -1,0 +1,37 @@
+<%= form_with(model: tutoriale, local: true) do |form| %>
+  <% if tutoriale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tutoriale.errors.count, "error") %> prohibited this tutoriale from being saved:</h2>
+
+      <ul>
+      <% tutoriale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_field :body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.text_field :level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
