@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Level</th>
-      <th>Url</th>
+      <th>Nombre del tutorial  </th>
+      <th>Descripción  </th>
+      <th>Nivel de dificultad  </th>
+      <th>Enlace  </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +20,9 @@
         <td><%= tutoriale.body %></td>
         <td><%= tutoriale.level %></td>
         <td><%= tutoriale.url %></td>
-        <td><%= link_to 'Show', tutoriale %></td>
-        <td><%= link_to 'Edit', edit_tutoriale_path(tutoriale) %></td>
-        <td><%= link_to 'Destroy', tutoriale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '  Ver ', tutoriale %></td>
+        <td><%= link_to '  Modificar ', edit_tutoriale_path(tutoriale) %></td>
+        <td><%= link_to '  Eliminar ', tutoriale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Tutoriale', new_tutoriale_path %>
+<%= link_to 'Crear tutorial', new_tutoriale_path %>
