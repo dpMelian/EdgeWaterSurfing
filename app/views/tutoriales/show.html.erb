@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid text-center">
+<p>
+  <strong>Nombre:</strong>
+  <%= @tutoriale.title %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @tutoriale.body %>
+</p>
+
+<p>
+  <strong>Nivel:</strong>
+  <%= @tutoriale.level %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @tutoriale.url %>
+</p>
+
+<%= link_to 'Editar', edit_tutoriale_path(@tutoriale) %> |
+<%= link_to 'Atrás', tutoriales_path %>
+</div>

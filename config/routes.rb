@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+
   get 'about/index'
+
+  resources :tutoriales
+
 =begin   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -21,6 +25,7 @@ Rails.application.routes.draw do
   resources :about
   resources :tutorial
   resources :sessions, only: [:new, :create, :destroy]
+  get '/buscarusuariorol' => 'pages#buscarusuariorol', :as => 'buscarusuariorol_page'
   get '/buscarusuario' => 'pages#buscarusuario', :as => 'buscarusuario_page'
   get '/buscarproducto' => 'pages#buscarproducto', :as => 'buscarproducto_page'
   get '/buscarclase' => 'pages#buscarclase', :as => 'buscarclase_page'
