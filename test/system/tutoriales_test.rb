@@ -20,7 +20,7 @@ class TutorialesTest < ApplicationSystemTestCase
     fill_in "Url", with: @tutoriale.url
     click_on "Create Tutoriale"
 
-    assert_text "Tutoriale was successfully created"
+    assert_text "El Tutorial fue creado con éxito."
     click_on "Back"
   end
 
@@ -34,7 +34,7 @@ class TutorialesTest < ApplicationSystemTestCase
     fill_in "Url", with: @tutoriale.url
     click_on "Update Tutoriale"
 
-    assert_text "Tutoriale was successfully updated"
+    assert_text "El Tutorial fue editado."
     click_on "Back"
   end
 
@@ -44,6 +44,6 @@ class TutorialesTest < ApplicationSystemTestCase
       click_on "Destroy", match: :first
     end
 
-    assert_text "Tutoriale was successfully destroyed"
+    assert_text "El Tutorial ha sido eliminado."
   end
 end

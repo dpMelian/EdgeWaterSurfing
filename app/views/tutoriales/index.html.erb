@@ -22,8 +22,8 @@
         <td><%= tutoriale.level %></td>
         <td><%= tutoriale.url %></td>
         <td><%= link_to '  Ver ', tutoriale %></td>
-        <td><%= link_to '  Modificar ', edit_tutoriale_path(tutoriale) %></td>
-        <td><%= link_to '  Eliminar ', tutoriale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '  Editar ', edit_tutoriale_path(tutoriale) %></td>
+        <td><%= link_to '  Eliminar ', tutoriale, method: :delete, data: { confirm: '¿Seguro que desea eliminar el Tutorial?' } %></td>
       </tr>
       <% end %>
     </tbody>
@@ -31,6 +31,6 @@
 
   <br>
 
-  <a class="btn btn-primary" href="/tutoriales/new" role="button">Crear tutorial</a>
+  <a class="btn btn-primary" href="/tutoriales/new" role="button">Nuevo tutorial</a>
   <a class="btn btn-success" href="/" role="button">Página principal</a>
 </div>
