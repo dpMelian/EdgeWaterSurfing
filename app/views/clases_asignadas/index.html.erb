@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>Clases asignadas</h1>
+
+    <% if logged_in? %>
+        <h2>Has iniciado sesión, <%= current_user.nombre %></h2>
+        <h2>Tu rol es: <%= current_user.rol %></h2>
+    <%end%>
+</div>

@@ -1,4 +1,4 @@
-<div class="container-fluid text-center">  
+<div class="container">  
   <p id="notice"><%= notice %></p>
 
   <p>
@@ -34,6 +34,11 @@
   <p>
     <strong>Descripción:</strong>
     <%= @clase.descripcion %>
+  </p>
+
+  <p>
+    <strong>Alumnos asignados:</strong>
+    <%= @clase.alumnos_asignados %>
   </p>
 
   <a class="btn btn-primary" href="<%= edit_clase_path(@clase) %>" role="button">Editar clase</a>

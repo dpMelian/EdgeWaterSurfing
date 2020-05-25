@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'about/index'
 
+  resources :clases_asignadas
   resources :tutoriales
 
 =begin   get 'sessions/new'
