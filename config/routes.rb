@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about/index'
 =begin   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   resources :usuarios
   resources :tienda
   resources :contacto
+  resources :about
   resources :tutorial
   resources :sessions, only: [:new, :create, :destroy]
   get '/buscarusuario' => 'pages#buscarusuario', :as => 'buscarusuario_page'
