@@ -2,15 +2,25 @@ class PagesController < ApplicationController
 
     def buscarusuario  
         if params[:buscarusuario].blank?  
-            redirect_to(root_path, alert: "Empty field!") and return  
+            redirect_to(usuarios_path, alert: "¡Rellena el campo!") and return  
           else  
             @parameter = params[:buscarusuario].downcase  
             @usuarios = Usuario.all.where("lower(nombre) LIKE :buscarusuario", buscarusuario: "%#{@parameter}%")  
           end  
     end
+    
+    def buscarusuariorol  
+      if params[:buscarusuariorol].blank?  
+          redirect_to(usuarios_path, alert: "¡Rellena el campo!") and return  
+        else  
+          @parameter = params[:buscarusuariorol].downcase  
+          @usuarios = Usuario.all.where("lower(rol) LIKE :buscarusuariorol", buscarusuariorol: "%#{@parameter}%")  
+        end  
+    end
+    
     def buscarproducto  
         if params[:buscarproducto].blank?  
-            redirect_to(root_path, alert: "Empty field!") and return  
+            redirect_to(productos_path, alert: "¡Rellena el campo!") and return  
           else  
             @parameter = params[:buscarproducto].downcase  
             @productos = Producto.all.where("lower(title) LIKE :buscarproducto", buscarproducto: "%#{@parameter}%")  
@@ -19,7 +29,7 @@ class PagesController < ApplicationController
   
     def buscarclase
       if params[:buscarclase].blank?  
-        redirect_to(root_path, alert: "Empty field!") and return  
+        redirect_to(clases_path, alert: "¡Rellena el campo!") and return  
       else  
         @parameter = params[:buscarclase].downcase  
         @clases = Clase.all.where("lower(nombre) LIKE :buscarclase", buscarclase: "%#{@parameter}%")  
