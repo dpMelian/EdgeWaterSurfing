@@ -3,6 +3,16 @@
 <div class="container">
   <h1>Tutoriales</h1>
 
+  <%= form_tag(buscarproducto_page_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :buscarproducto, params[:buscarproducto], placeholder: "Nombre del tutorial", class: "form-control" %>  
+    <div class="input-group-btn">  
+      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    </div>  
+  </div>  
+<% end %>
+
   <table class="table">
     <thead>
       <tr>
@@ -22,8 +32,8 @@
         <td><%= tutoriale.level %></td>
         <td><%= tutoriale.url %></td>
         <td><%= link_to '  Ver ', tutoriale %></td>
-        <td><%= link_to '  Modificar ', edit_tutoriale_path(tutoriale) %></td>
-        <td><%= link_to '  Eliminar ', tutoriale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '  Editar ', edit_tutoriale_path(tutoriale) %></td>
+        <td><%= link_to '  Eliminar ', tutoriale, method: :delete, data: { confirm: '¿Seguro que desea eliminar el Tutorial?' } %></td>
       </tr>
       <% end %>
     </tbody>
@@ -31,6 +41,6 @@
 
   <br>
 
-  <a class="btn btn-primary" href="/tutoriales/new" role="button">Crear tutorial</a>
+  <a class="btn btn-primary" href="/tutoriales/new" role="button">Nuevo tutorial</a>
   <a class="btn btn-success" href="/" role="button">Página principal</a>
 </div>

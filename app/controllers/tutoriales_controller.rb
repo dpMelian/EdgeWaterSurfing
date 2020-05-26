@@ -28,7 +28,7 @@ class TutorialesController < ApplicationController
 
     respond_to do |format|
       if @tutoriale.save
-        format.html { redirect_to @tutoriale, notice: 'Tutoriale was successfully created.' }
+        format.html { redirect_to @tutoriale, notice: 'El Tutorial fue creado con éxito.' }
         format.json { render :show, status: :created, location: @tutoriale }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TutorialesController < ApplicationController
   def update
     respond_to do |format|
       if @tutoriale.update(tutoriale_params)
-        format.html { redirect_to @tutoriale, notice: 'Tutoriale was successfully updated.' }
+        format.html { redirect_to @tutoriale, notice: 'El Tutorial fue editado.' }
         format.json { render :show, status: :ok, location: @tutoriale }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TutorialesController < ApplicationController
   def destroy
     @tutoriale.destroy
     respond_to do |format|
-      format.html { redirect_to tutoriales_url, notice: 'Tutoriale was successfully destroyed.' }
+      format.html { redirect_to tutoriales_url, notice: 'El Tutorial ha sido eliminado.' }
       format.json { head :no_content }
     end
   end

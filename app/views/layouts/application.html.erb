@@ -12,7 +12,9 @@
   <body>
     
   <%
+    rol = session[:usuario_rol].to_s.downcase
     @currentUrl = request.path
+    @login = "noactive"
     @inicio = "noactive"
     @tienda = "noactive"
     @contacto = "noactive"
@@ -20,6 +22,7 @@
     @clases = "noactive"
     @productos = "noactive"
     @tutorial = "noactive"
+    @tutoriales = "noactive"
     if @currentUrl == "/"
       @inicio = "active"
     elsif @currentUrl == "/contacto"
@@ -32,8 +35,12 @@
       @clases = "active"
     elsif @currentUrl == "/productos"
       @productos = "active"
+    elsif @currentUrl == "/login"
+      @login = "active"
     elsif @currentUrl == "/tutorial"
       @tutorial = "active"
+    elsif @tutoriales == "/tutoriales"
+      @tutoriales = "active"
     end
   %>
     <nav class="navbar navbar-inverse">
@@ -44,13 +51,21 @@
         <ul class="nav navbar-nav">
           <li class=<%= @inicio%>><a href="/" style="color:white">Inicio</a></li>
           <li class=<%= @tienda%>><a href="/tienda" style="color:white"> Tienda</a></li>
-          <li class=<%= @tutorial%>><a href="/tutoriales" style="color:white">Tutoriales</a></li>
+          <li class=<%= @tutorial%>><a href="/tutorial" style="color:white">Tutoriales</a></li>
           <li class=<%= @contacto%>><a href="/contacto" style="color:white">Contacto</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class=<%= @usuarios%>><a href="/usuarios" style="color:white">Gestionar usuarios</a></li>
-          <li class=<%= @clases%>><a href="/clases" style="color:white">Gestionar clases</a></li>
-          <li class=<%= @productos%>><a href="/productos" style="color:white">Gestionar productos</a></li>
+        <% if session[:usuario_id] != nil %>
+          <% if rol == "admin" %>
+            <li class=<%= @usuarios%>><a href="/usuarios" style="color:white">Gestionar usuarios</a></li>
+            <li class=<%= @clases%>><a href="/clases" style="color:white">Gestionar clases</a></li>
+            <li class=<%= @productos%>><a href="/productos" style="color:white">Gestionar productos</a></li>
+            <li class=<%= @tutoriales%>><a href="/tutoriales" style="color:white">Gestionar tutoriales</a></li>
+          <% end %>
+          <li class="noactive"><a href='/logout' style="color:white">Cerrar sesión</a></li>
+        <% else %>
+          <li class=<%= @login%>><a href='/login' style="color:white">Iniciar sesión</a></li>
+        <% end %>
         </ul>
       </div>
     </nav>
