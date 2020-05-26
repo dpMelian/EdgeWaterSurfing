@@ -1,8 +1,26 @@
 <div class="container">
+    <% array_clases = Clase.all.to_a %>
     <h1>Clases asignadas</h1>
 
     <% if logged_in? %>
-        <h2>Has iniciado sesión, <%= current_user.nombre %></h2>
-        <h2>Tu rol es: <%= current_user.rol %></h2>
-    <%end%>
+        <p>Bienvenido/a, <%= current_user.nombre %></p>
+        <p>Tu rol es: <%= current_user.rol %></p>
+    <% end %>
+
+    <% clases = [] %>
+    
+    <% array_clases.each do |clase| %>
+        <% clases.append(clase) %>
+    <% end %>
+
+    <h1>Tus clases:</h1>
+
+    <ul>
+    <% clases.each do |clase| %>
+        <% if clase.alumnos_asignados.to_s.include? current_user.nombre %>
+            <li><strong><%= clase.nombre %></strong></li>
+            <p><%= clase.contenido %><p>
+        <% end %>
+    <% end %>
+    </ul>
 </div>
