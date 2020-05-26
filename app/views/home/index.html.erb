@@ -1,5 +1,5 @@
 <%
-rol = session[:usuario_rol].downcase
+rol = session[:usuario_rol].to_s.downcase
 time = Time.now
 dia = time.strftime("%A")
 today = ""

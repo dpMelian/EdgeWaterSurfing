@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'about/index'
 
   resources :clases_asignadas
-  resources :tutoriales
 
 =begin   get 'sessions/new'
   get 'sessions/create'
@@ -24,6 +23,7 @@ Rails.application.routes.draw do
   resources :tienda
   resources :contacto
   resources :about
+  resources :tutoriales
   resources :tutorial
   resources :sessions, only: [:new, :create, :destroy]
   get '/buscarusuariorol' => 'pages#buscarusuariorol', :as => 'buscarusuariorol_page'

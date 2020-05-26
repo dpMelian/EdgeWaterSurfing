@@ -15,12 +15,12 @@
   <tbody>
 
       <% @tutoriales.each do |tutoriale| %>
-
         <tr>
-        <td><%= tutoriale.title %> <br> <%= "Nivel: " + tutoriale.level %> <br> <%= "video: " + tutoriale.url %> </td> 
-        <td> <br> <br> <%= tutoriale.body %></td>
+        <td><%= tutoriale.title %> <br> <%= "Nivel: "tutoriale.level %> <br> <%= tutoriale.url %></td>
+          
+          <td><%= tutoriale.body %></td>
+  
         </tr>
-
       <% end %>
 
   </tbody>
