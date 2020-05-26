@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     usuario = Usuario.find_by_email(params[:email])
     if usuario && usuario.authenticate(params[:password])
       session[:usuario_id] = usuario.id
+      session[:usuario_rol] = usuario.rol
       redirect_to root_url
       flash[:success] = "Inicio de sesión correcto, bienvenido " + usuario.nombre + "."
     else

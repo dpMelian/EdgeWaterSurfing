@@ -1,4 +1,5 @@
 <%
+rol = session[:usuario_rol].downcase
 time = Time.now
 dia = time.strftime("%A")
 today = ""
@@ -28,10 +29,12 @@ end
             <p><a href="/">Sobre nosotros</a></p>
             <p><a href="/terminos">Términos</a></p>
             <%if session[:usuario_id] == nil %>
-                <%= raw("<p><a href='/login'>Iniciar sesión</a></p>")%>
+                <p><a href='/login'>Iniciar sesión</a></p>
             <%end%>
             <%if session[:usuario_id] != nil %>
-                <%= raw("<p><a href='/logout'>Cerrar sesión</a></p>")%>
+                <p class="side">Estás logeado como <%=rol%></p>
+                <p><a href='/logout'>Cerrar sesión</a></p>
+                
             <%end%>
             
         </div>
