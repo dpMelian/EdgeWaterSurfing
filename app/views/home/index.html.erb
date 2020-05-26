@@ -26,8 +26,6 @@ end
         <div class="col-sm-2 sidenav">
             <img src="/images/logo.png" class="img-rounded img-responsive" alt="EdgeWaterSurfing logo">
             <p class="time">Hoy es <%=today%>, <%=time.strftime("%k:%M %p") %></p>
-            <p><a href="/">Sobre nosotros</a></p>
-            <p><a href="/terminos">Términos</a></p>
             <%if session[:usuario_id] == nil %>
                 <p><a href='/login'>Iniciar sesión</a></p>
             <%end%>
@@ -36,6 +34,9 @@ end
                 <p><a href='/logout'>Cerrar sesión</a></p>
                 
             <%end%>
+            <p><a href="/">Sobre nosotros</a></p>
+            <p><a href="/terminos">Términos</a></p>
+            
             
         </div>
         <div class="col-sm-10 text-left" style="text-align: justify; text-justify: inter-word;">
