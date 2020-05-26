@@ -17,7 +17,7 @@
   <div class="card" style="width: 18rem;">
 
     <% if producto.image.attached? %>
-      <img class="card-img-top" src="<%= url_for(producto.image)  %>" alt="Card image cap">
+      <img src="<%= url_for(producto.image)  %>" class="img-rounded img-responsive" alt="Product view">
     <% end %>
 
     <div class="card-body">
