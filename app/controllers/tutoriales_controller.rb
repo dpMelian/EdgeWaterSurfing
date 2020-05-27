@@ -1,5 +1,6 @@
 class TutorialesController < ApplicationController
   before_action :set_tutoriale, only: [:show, :edit, :update, :destroy]
+  before_action :access
 
   # GET /tutoriales
   # GET /tutoriales.json
@@ -70,5 +71,12 @@ class TutorialesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutoriale_params
       params.require(:tutoriale).permit(:title, :body, :level, :url)
+    end
+
+    def access
+      rol = session[:usuario_rol].to_s.downcase
+      if rol != "admin" || session[:usuario_id] == nil
+        redirect_to root_url
+      end
     end
 end

@@ -1,6 +1,6 @@
 class ProductosController < ApplicationController
   before_action :set_producto, only: [:show, :edit, :update, :destroy]
-
+  before_action :access
 
   # GET /productos
   # GET /productos.json
@@ -101,5 +101,12 @@ class ProductosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def producto_params
       params.require(:producto).permit(:title, :body, :image, :price, :category)
+    end
+
+    def access
+      rol = session[:usuario_rol].to_s.downcase
+      if rol != "admin" || session[:usuario_id] == nil
+        redirect_to root_url
+      end
     end
 end

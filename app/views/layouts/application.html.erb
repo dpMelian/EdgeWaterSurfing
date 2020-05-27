@@ -17,6 +17,7 @@
     @login = "noactive"
     @inicio = "noactive"
     @tienda = "noactive"
+    @asignadas = "noactive"
     @contacto = "noactive"
     @usuarios = "noactive"
     @clases = "noactive"
@@ -39,6 +40,8 @@
       @login = "active"
     elsif @currentUrl == "/tutorial"
       @tutorial = "active"
+    elsif @asignadas == "/clases_asignadas"
+      @asignadas = "active"
     elsif @tutoriales == "/tutoriales"
       @tutoriales = "active"
     end
@@ -61,6 +64,9 @@
             <li class=<%= @clases%>><a href="/clases" style="color:white">Gestionar clases</a></li>
             <li class=<%= @productos%>><a href="/productos" style="color:white">Gestionar productos</a></li>
             <li class=<%= @tutoriales%>><a href="/tutoriales" style="color:white">Gestionar tutoriales</a></li>
+          <% end %>
+          <% if rol == "alumno" || rol == "profesor" %>
+            <li class=<%= @asignadas%>><a href="/clases_asignadas" style="color:white">Clases asignadas</a></li>
           <% end %>
           <li class="noactive"><a href='/logout' style="color:white">Cerrar sesión</a></li>
         <% else %>
