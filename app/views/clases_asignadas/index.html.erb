@@ -3,8 +3,8 @@
     <h1>Clases asignadas</h1>
 
     <% if logged_in? %>
-        <p>Bienvenido/a, <%= current_user.nombre %></p>
-        <p>Tu rol es: <%= current_user.rol %></p>
+        <p>Bienvenido/a, <%= current_user.nombre %>.</p>
+        <p>Tu rol es: <%= current_user.rol %>.</p>
     <% end %>
 
     <% clases = [] %>
@@ -16,10 +16,19 @@
     <h1>Tus clases:</h1>
 
     <ul>
-    <% clases.each do |clase| %>
+    <% clases.each_with_index do |clase, indice| %>
         <% if clase.alumnos_asignados.to_s.include? current_user.nombre %>
             <li><strong><%= clase.nombre %></strong></li>
-            <p><%= clase.contenido %><p>
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#<%= indice %>"  aria-expanded="false" aria-controls="collapseExample">
+                    Ver contenido
+                </button>
+            </p>
+            <div class="collapse" id="<%= indice %>">
+                <div class="card card-body mt-3">
+                    <%= clase.contenido %>
+                </div>
+            </div>
         <% end %>
     <% end %>
     </ul>
