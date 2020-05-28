@@ -3,10 +3,10 @@
 <div class="container">
   <h1>Tutoriales</h1>
 
-  <%= form_tag(buscarproducto_page_path, :method => "get",   
+  <%= form_tag(buscartutorial_page_path, :method => "get",   
     class: 'navbar-form navbar-left') do %>  
   <div class="input-group">  
-    <%= search_field_tag :buscarproducto, params[:buscarproducto], placeholder: "Nombre del tutorial", class: "form-control" %>  
+    <%= search_field_tag :buscartutorial, params[:buscartutorial], placeholder: "Nombre del tutorial", class: "form-control" %>  
     <div class="input-group-btn">  
       <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
     </div>  
