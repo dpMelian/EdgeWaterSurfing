@@ -50,6 +50,12 @@
     text-align: right;
 }
 
+.nav.navbar-nav.navbar-right > .open > a, .nav.navbar-nav.navbar-right > .open > a:focus, .nav.navbar-nav.navbar-right > .open > a:hover {
+    background-color: rgb(255, 184, 53);
+}
+
+
+
 .contenedor:hover .overlay {
     bottom: 0;
     height: 10%;
@@ -87,12 +93,7 @@
     background-color: rgb(255, 185, 55);
     color:white;
 }
-/*
-.nav.navbar-nav.navbar-right li.active > a:hover{
-    background-color: rgb(255, 207, 119);
-    color:white;
-}
-*/
+
 .nav.navbar-nav.navbar-right li.noactive > a:hover{
     background-color: rgb(255, 184, 53);
     color:white;
