@@ -35,4 +35,13 @@ class PagesController < ApplicationController
         @clases = Clase.all.where("lower(nombre) LIKE :buscarclase", buscarclase: "%#{@parameter}%")  
       end  
     end
+
+    def buscartutorial  
+      if params[:buscartutorial].blank?  
+          redirect_to(tutoriales_path, alert: "¡Rellena el campo!") and return  
+        else  
+          @parameter = params[:buscartutorial].downcase  
+          @tutoriale = Tutoriale.all.where("lower(title) LIKE :buscartutorial", buscartutorial: "%#{@parameter}%")  
+        end  
+  end
 end

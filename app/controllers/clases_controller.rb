@@ -1,10 +1,9 @@
 class ClasesController < ApplicationController
   before_action :set_clase, only: [:show, :edit, :update, :destroy]
-
+  before_action :access
   # GET /clases
   # GET /clases.json
   def index
-    
     @clases = Clase.all
   end
 
@@ -88,6 +87,13 @@ class ClasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clase_params
-      params.require(:clase).permit(:nombre, :duracion, :profesor_asignado, :cantidad_alumnos, :contenido, :nivel_experiencia, :descripcion)
+      params.require(:clase).permit(:nombre, :duracion, :profesor_asignado, :cantidad_alumnos, :contenido, :nivel_experiencia, :descripcion, :alumnos_asignados)
+    end
+
+    def access
+      rol = session[:usuario_rol].to_s.downcase
+      if rol != "admin" || session[:usuario_id] == nil
+        redirect_to root_url
+      end
     end
 end
