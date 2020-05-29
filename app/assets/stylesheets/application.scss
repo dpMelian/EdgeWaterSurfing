@@ -50,6 +50,12 @@
     text-align: right;
 }
 
+.nav.navbar-nav.navbar-right > .open > a, .nav.navbar-nav.navbar-right > .open > a:focus, .nav.navbar-nav.navbar-right > .open > a:hover {
+    background-color: rgb(255, 184, 53);
+}
+
+
+
 .contenedor:hover .overlay {
     bottom: 0;
     height: 10%;
@@ -65,7 +71,7 @@
     margin-bottom: 0;
     border-radius: 0;
     background: rgb(0,77,190);
-    background: linear-gradient(90deg, rgba(0,77,190,1) 0%, rgba(119,181,255,1) 41%, rgb(245, 177, 61) 55%);
+    background: linear-gradient(90deg, rgba(0,77,190,1) 0%, rgba(119,181,255,1) 51%, rgb(245, 177, 61) 73%);
 }
 
 .nav.navbar-nav li.active > a{
@@ -87,12 +93,7 @@
     background-color: rgb(255, 185, 55);
     color:white;
 }
-/*
-.nav.navbar-nav.navbar-right li.active > a:hover{
-    background-color: rgb(255, 207, 119);
-    color:white;
-}
-*/
+
 .nav.navbar-nav.navbar-right li.noactive > a:hover{
     background-color: rgb(255, 184, 53);
     color:white;

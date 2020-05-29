@@ -13,7 +13,7 @@
         <% clases.append(clase) %>
     <% end %>
 
-    <h1>Tus clases:</h1>
+    <h2>Tus clases:</h2>
 
     <% clases.each_with_index do |clase, indice| %>
         <% if clase.alumnos_asignados.to_s.include? current_user.nombre %>
@@ -53,4 +53,9 @@
             </div>
         <% end %>
     <% end %>
+    <div class="text-center">
+        <a class="btn btn-primary btn-lg" href="<%= root_url %>" role="button">
+            Volver a la página principal
+        </a>
+    </div>
 </div>

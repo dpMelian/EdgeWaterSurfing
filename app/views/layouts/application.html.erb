@@ -60,10 +60,16 @@
         <ul class="nav navbar-nav navbar-right">
         <% if session[:usuario_id] != nil %>
           <% if rol == "admin" %>
-            <li class=<%= @usuarios%>><a href="/usuarios" style="color:white">Gestionar usuarios</a></li>
-            <li class=<%= @clases%>><a href="/clases" style="color:white">Gestionar clases</a></li>
-            <li class=<%= @productos%>><a href="/productos" style="color:white">Gestionar productos</a></li>
-            <li class=<%= @tutoriales%>><a href="/tutoriales" style="color:white">Gestionar tutoriales</a></li>
+            <li class="noactive dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:white">Gestionar
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/usuarios">Gestionar usuarios</a></li>
+                <li><a href="/clases">Gestionar clases</a></li>
+                <li><a href="/productos">Gestionar productos</a></li>
+                <li><a href="/tutoriales">Gestionar tutoriales</a></li>
+              </ul>
+            </li>
           <% end %>
           <% if rol == "alumno" || rol == "profesor" %>
             <li class=<%= @asignadas%>><a href="/clases_asignadas" style="color:white">Clases asignadas</a></li>
@@ -89,7 +95,7 @@
         <p class="mb-1">© 2020 EdgeWaterSurfing</p>
         <ul class="list-inline">
           <li class="list-inline-item"><a href="/contacto">Contacto</a></li>
-          <li class="list-inline-item"><a href="#">Términos</a></li>
+          <li class="list-inline-item"><a href="/terminos">Términos</a></li>
           <li class="list-inline-item"><a href="/about">Sobre nosotros</a></li>
 
         </ul>

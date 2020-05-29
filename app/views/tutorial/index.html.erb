@@ -12,7 +12,8 @@
   </div>  
 <% end %>
 
-  <p> En ésta sección puede consultar los distintos tutoriales disponibles. </h1>
+  <br> <br>
+  <h2> Aquí podremos consultar los tutoriales disponibles </h2>
 
   <table class="table">
     <thead>
@@ -28,7 +29,7 @@
       <% @tutoriales.each do |tutoriale| %>
 
         <tr>
-        <td><%= tutoriale.title %> <br> <%= "Nivel: " + tutoriale.level %> <br> <%= "video: " + tutoriale.url %> </td> 
+        <td><%= tutoriale.title %> <br> <%= "Nivel: " + tutoriale.level %> <br> <%= "video: " + tutoriale.url %>  </td> 
         <td> <br> <br> <%= tutoriale.body %></td>
         </tr>
 

@@ -7,6 +7,12 @@ class TutorialesController < ApplicationController
   def index
     @tutoriales = Tutoriale.all
   end
+  module ApplicationHelper
+    # this method will embed the code from the partial
+    def youtube_video(url)
+      render :partial => 'shared/video', :locals => { :url => url }
+    end 
+  end
 
   # GET /tutoriales/1
   # GET /tutoriales/1.json
