@@ -29,12 +29,10 @@
       <% @tutoriales.each do |tutoriale| %>
 
         <tr>
-        <td><%= tutoriale.title %> <br> <%= "Nivel: " + tutoriale.level %> <br> <%= "video: " + tutoriale.url %>  </td> 
+        <td> <%= tutoriale.title %> <br> <%= "Nivel: " + tutoriale.level %> <br> <iframe src='https://www.youtube.com/embed/<%= tutoriale.url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' width="256" height="144" allowfullscreen></iframe> </td> 
         <td> <br> <br> <%= tutoriale.body %></td>
         </tr>
-
       <% end %>
-
   </tbody>
 </table>
 </div>
